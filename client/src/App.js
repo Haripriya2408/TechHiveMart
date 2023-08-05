@@ -102,7 +102,7 @@ const handleEdit=(key)=>{
         className="block mt-12 mx-auto mb-8 md:inline-block md:mx-4 my-5 px-6 py-3 bg-gradient-to-r from-sky-400 to-indigo-950 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 mt-[-50px] md:mt-0 cursor-pointer"
         onClick={() => setSecAdd(true)}
       >
-        Add Item
+        Add
       </button>
     </div>
   {
