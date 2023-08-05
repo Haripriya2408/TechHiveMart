@@ -1,0 +1,27 @@
+body{
+
+ min-height:100vh;
+ overflow:hidden;
+
+ justify-content:center;
+ align-items:center;
+}
+
+/*body::before{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:linear-gradient(#ffc107,#e91e63);
+  border-radius:50%;
+  transform:translate(-200px,-165px);
+}
+body::after{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:linear-gradient(#a855f7,#ec4899);
+  border-radius:50%;
+  transform:translate(200px,220px);
+}*/
