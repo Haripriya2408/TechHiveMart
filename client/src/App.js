@@ -13,9 +13,7 @@ const handleOnchange = (e) => {
   setAddData((prev) => ({ ...prev, [name]: value }));
 };
 
-// ...
 
-// Update the handleSubmit function to use 'addData' instead of 'data'
 const handleSubmit = async (e) => {
   e.preventDefault();
   const datas = await axios.post("/create", addData);
@@ -71,9 +69,7 @@ const handleEditchange = async (e) => {
   setEditData((prev) => ({ ...prev, [name]: value }));
 };
 
-// ...
 
-// Update the handleUpdate function to use 'editData' instead of 'data'
 const handleUpdate = async (e) => {
   e.preventDefault();
   const data = await axios.put("/update", editData);
@@ -92,89 +88,7 @@ const handleEdit=(key)=>{
   }
 
 
- 
-// return (
-//     <div className="p-[10px] max-w-2xl m-[50px] justify-center align-middle">
-//      <button className=' border-none p-[10px] bg-sky-800  text-base rounded-md cursor-pointer'  onClick={()=>setSecAdd(true)}>Add</button>
-
-// {
-//   secAdd &&(
-//     <div>
-//     <form className=' w-[420px] bg-white flex flex-col p-[45px] shadow-sm rounded-md' onSubmit={handleSubmit}>
-//     <div  onClick={()=>setSecAdd(false)} > <MdClose/></div>
-//       <label className=' text-lg' htmlFor="name">name:</label>
-//         <input className='text-lg p-[5px]' type="text" id="name" name="name" onChange={handleOnchange} value={data.name}/>
-//         <label className=' text-lg' htmlFor="desc">Description</label>
-//         <input type="text" id="desc" name="desc" onChange={handleOnchange} value={data.email}/>
-        
-//          <button>submit</button>
-//     </form>
-//     </div>
-//   )
-// }
-// {
-//   edit &&(
-//     <div>
-//       <form onSubmit={handleUpdate}>
-//       <div  onClick={()=>setEdit(false)} > <MdClose/></div>
-//         <label htmlFor="name">name:</label>
-//           <input type="text" id="name" name="name" onChange={handleEditchange} value={Editdata.name}/>
-//           <label htmlFor="email">email</label>
-//           <input type="email" id="mail" name="email" onChange={handleEditchange} value={Editdata.email}/>
-//           <label htmlFor="mobile">mobile:</label>
-//           <input type="number" id="mobile" name="mobile" onChange={handleEditchange} value={Editdata.mobile}/>
-//            <button>submit</button>
-//       </form>
-//       </div>
-//   )
-// }
-
-// <div>
-//   <table>
-//     <thead>
-      
-// <tr>
-//   <th>Name</th>
-//   <th>Email</th>
-//   <th>Mobile</th>
-
- 
-  
-//   </tr></thead>
-//   <tbody>
-
-//   {
-//     dataList[0]?(
-//     dataList.map((key)=>{
-//       return(
-//      <tr>
-//       <td>{key.name}</td>
-//       <td>{key.email}</td>
-//       <td>{key.mobile}</td>
-//       <td>
-      
-//     <button onClick={()=>handleEdit(key)}>edit</button>
-//     <button onClick={()=>handleDelete(key._id)}>delete</button>
-  
-//       </td>
-//      </tr>
-//       )
-//     })):(
-//       <p>no response</p>
-//     )
-//   }
-//   </tbody>
-//   </table>
-// </div>
-    
-//     </div>
-//   );
-// }
-
-
-
-
-  return (
+ return (
     <div>
     <div class="bg-gradient-to-r from-sky-400 to-indigo-950 w-full h-48 flex justify-center items-center">
       <div class="text-center">
@@ -185,68 +99,13 @@ const handleEdit=(key)=>{
     </div>
     <div class="flex justify-center mt-10"> {/* Add mt-10 class for margin-top */}
       <button
-        className="block mt-7 mx-auto mb-8 md:inline-block md:mx-4 my-5 px-6 py-3 bg-gradient-to-r from-sky-400 to-indigo-950 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 mt-[-50px] md:mt-0 cursor-pointer"
+        className="block mt-12 mx-auto mb-8 md:inline-block md:mx-4 my-5 px-6 py-3 bg-gradient-to-r from-sky-400 to-indigo-950 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 mt-[-50px] md:mt-0 cursor-pointer"
         onClick={() => setSecAdd(true)}
       >
         Add Item
       </button>
     </div>
-  
-  
-  
-  
-  
-  
-  
-
-      {/* {secAdd && (
-        <div className='fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-50 bg-black bg-opacity-50'>
-        <form onSubmit={handleSubmit}
-          className="w-[420px] bg-white flex flex-col p-[45px] shadow-sm rounded-md"
-         
-        >
-            <div
-          className="ml-auto text-lg w-[20px] h-[20px] flex justify-center align-middle rounded-2xl border border-1 border-solid border-slate-950"
-          onClick={() => setEdit(false)}
-        >
-          <MdClose /></div>
-       <label className=' text-lg' htmlFor="name">Name</label>
-         <input className='text-lg p-[5px] border-[2px]' type="text" id="name" name="name" onChange={handleOnchange} value={data.name}/>
-        <label className=' text-lg' htmlFor="desc">Description</label>
-        <input className='text-lg p-[5px] border-[2px]' type="text" id="desc" name="desc" onChange={handleOnchange} value={data.desc}/>
-          <button className="bg-gradient-to-r from-sky-400 to-indigo-950 h-12 rounded text-slate-50 font-medium mt-5">submit</button>
-        </form>
-        </div>
-      )}
-        {edit && (
-        <div  className='fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-50 bg-black bg-opacity-50'>
-        <form onSubmit={handleUpdate}
-          className="w-[420px] bg-white flex flex-col p-[45px] shadow-sm rounded-md"
-          
-        >
-            <div
-          className="ml-auto text-lg w-[20px] h-[20px] flex justify-center align-middle rounded-2xl border border-1 border-solid border-slate-950"
-          onClick={() => setEdit(false)}
-        >
-          <MdClose /></div>
-       <label className=' text-lg' htmlFor="name">name:</label>
-         <input className='text-lg p-[5px] border-[2px]' type="text" id="name" name="name" onChange={handleEditchange} value={Editdata.name}/>
-        <label className=' text-lg' htmlFor="desc">Description</label>
-        <textarea
-  className='text-lg p-[5px] border-[2px] rounded-lg bg-white shadow-md resize-none'
-  id="desc"
-  name="desc"
-  onChange={handleEditchange}
-  value={Editdata.desc}
-/>
-
-          <button className="bg-gradient-to-r from-sky-400 to-indigo-950 h-12 rounded text-slate-50 font-medium mt-5">submit</button>
-        </form>
-        </div>
-      )} */}
-
-
-{
+  {
   secAdd && (
     <div className='fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-50 bg-black bg-opacity-50'>
       <form  className="w-[420px] bg-white flex flex-col p-[45px] shadow-sm rounded-md" onSubmit={handleSubmit}>
